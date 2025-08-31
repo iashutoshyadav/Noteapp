@@ -1,5 +1,5 @@
 import { OAuth2Client } from "google-auth-library";
-import { env } from "../config/env.js";
+import { env } from "../config/env";
 
 const client = new OAuth2Client(env.GOOGLE_CLIENT_ID);
 export async function verifyGoogleIdToken(idToken: string) {

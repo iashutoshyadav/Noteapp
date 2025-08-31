@@ -1,5 +1,5 @@
 import jwt, { type Secret, type SignOptions, type JwtPayload } from "jsonwebtoken";
-import { env } from "../config/env.js";
+import { env } from "../config/env";
 
 function toExpiresIn(v: string): SignOptions["expiresIn"] {
   if (/^\d+$/.test(v)) return Number(v);

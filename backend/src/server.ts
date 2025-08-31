@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { connectMongo } from "./config/mongo.js";
-import { env } from "./config/env.js";
-import authRoutes from "./routes/auth.js";
-import notesRoutes from "./routes/notes.js";
-import { errorHandler } from "./middleware/error.js";
+import { connectMongo } from "./config/mongo";
+import { env } from "./config/env";
+import authRoutes from "./routes/auth";
+import notesRoutes from "./routes/notes";
+import { errorHandler } from "./middleware/error";
 
 const app = express();
 

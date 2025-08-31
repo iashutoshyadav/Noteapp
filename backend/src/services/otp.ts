@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { User } from "../models/User.js";
+import { User } from "../models/User";
 
 export function generateOtp(): string {
   return Math.floor(100000 + Math.random() * 900000).toString();

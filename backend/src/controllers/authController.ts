@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { z } from "zod";
-import { User } from "../models/User.js";
-import { generateOtp, setOtp, validateOtp } from "../services/otp.js";
-import { signJwt } from "../services/jwt.js";
-import { verifyGoogleIdToken } from "../services/google.js";
+import { User } from "../models/User";
+import { generateOtp, setOtp, validateOtp } from "../services/otp";
+import { signJwt } from "../services/jwt";
+import { verifyGoogleIdToken } from "../services/google";
 import nodemailer from "nodemailer";
 
 // Schemas

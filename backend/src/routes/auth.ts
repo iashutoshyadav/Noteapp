@@ -3,7 +3,7 @@ import {
   requestOtp,
   verifyOtpAndLogin,
   googleLogin
-} from "../controllers/authController.js";
+} from "../controllers/authController";
 
 const router = Router();
 router.post("/request-otp", requestOtp);

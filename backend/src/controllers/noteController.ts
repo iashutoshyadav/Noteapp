@@ -1,7 +1,7 @@
 import { Response } from "express";
 import { z } from "zod";
-import { Note } from "../models/Note.js";
-import { AuthedRequest } from "../middleware/auth.js";
+import { Note } from "../models/Note";
+import { AuthedRequest } from "../middleware/auth";
 
 const createSchema = z.object({ body: z.string().min(1).max(2000) });
 const idSchema = z.object({ id: z.string().length(24) });
