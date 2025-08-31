@@ -21,6 +21,7 @@ app.use("/api/notes", notesRoutes);
 app.use(errorHandler);
 
 connectMongo().then(() => {
+  const PORT = process.env.PORT || env.PORT || 5000;
   app.listen(Number(env.PORT), () =>
     console.log(` API running on http://localhost:${env.PORT}`)
   );
