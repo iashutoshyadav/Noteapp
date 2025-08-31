@@ -3,13 +3,11 @@ node_modules
 frontend/node_modules
 backend/node_modules
 
-# environment
+# environment (real secrets only)
 .env
 *.env
-env.ts
 frontend/.env
 backend/.env
-backend/env.ts
 
 # build / output
 dist
