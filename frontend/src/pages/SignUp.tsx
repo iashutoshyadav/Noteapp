@@ -42,7 +42,7 @@ export default function SignUp() {
       if (emailError) throw new Error(emailError);
 
       setLoading(true);
-      const { data } = await api.post("/auth/request-otp", { email });
+      await api.post("/auth/request-otp", { email });
       setOtpStep(true);
     } catch (e: any) {
       setErr(e?.response?.data?.error || e?.message || "Failed to send OTP.");
@@ -109,7 +109,7 @@ export default function SignUp() {
       <Alert msg={err} />
 
       <form onSubmit={verifyAndSignup} className="space-y-4 font-sans">
-        {/* Your Name */}
+        {/* Name */}
         <div className="relative">
           <label className="absolute -top-2 left-3 bg-white px-1 text-xs text-black">
             Your Name
@@ -154,7 +154,7 @@ export default function SignUp() {
           )}
         </div>
 
-        {/* OTP Step */}
+        {/* OTP */}
         {otpStep && (
           <div className="relative">
             <label className="absolute -top-2 left-3 bg-white px-1 text-xs text-gray-500">
@@ -171,7 +171,7 @@ export default function SignUp() {
           </div>
         )}
 
-        {/* Button changes dynamically */}
+        {/* Buttons */}
         {!otpStep ? (
           <button
             type="button"
@@ -190,6 +190,7 @@ export default function SignUp() {
             {loading ? "Verifying…" : "Sign up"}
           </button>
         )}
+
         {/* Google button */}
         <button
           type="button"

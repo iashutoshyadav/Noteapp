@@ -37,7 +37,7 @@ export default function SignIn() {
       setLoading(true);
       if (emailError) throw new Error(emailError);
 
-      const { data } = await api.post("/auth/request-otp", { email });
+      await api.post("/auth/request-otp", { email });
       setOtpStep(true);
     } catch (e: any) {
       setErr(e.response?.data?.error || e.message);
@@ -106,7 +106,8 @@ export default function SignIn() {
             <p className="text-xs text-red-500 mt-1">{emailError}</p>
           )}
         </div>
-        {/* OTP (only visible after request) */}
+
+        {/* OTP */}
         {otpStep && (
           <FormField
             label="OTP"
@@ -116,7 +117,7 @@ export default function SignIn() {
           />
         )}
 
-        {/* Dynamic button */}
+        {/* Buttons */}
         {!otpStep ? (
           <button
             className="btn bg-white hover:bg-gray-200 border border-gray-300 text-black w-full"
@@ -135,9 +136,9 @@ export default function SignIn() {
           </button>
         )}
 
-        {/* Google Button */}
+        {/* Google */}
         <button
-          className="btn bg-blue-400 hover:bg-blue-400 text-white w-full"
+          className="btn bg-blue-400 hover:bg-blue-500 text-white w-full"
           onClick={googleSignIn}
         >
           Continue with Google
